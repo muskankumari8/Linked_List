@@ -1,0 +1,49 @@
+import java.util.*;
+public class Linked_list1 {
+    public static class Node{
+        int data;
+        Node next;
+        public Node(int data){
+            this.data=data;
+            this.next=null;
+        }
+    }
+    static Node head = null;
+    static Node tail = null;
+    public static void addFirst(int data){
+        Node newNode = new Node(data);
+        if(head == null){
+            head = tail = newNode;
+        }
+        newNode.next = head;
+        head = newNode;
+    }
+    public static void addLast(int data){
+        Node newNode1 = new Node(data);
+        if(head == null){
+            head = tail = null;
+        }
+        tail.next = newNode1;
+        tail=newNode1;
+    }
+    public static void display(Node head){
+        Node temp = head;
+        while(temp != null){
+            System.out.println(temp.data+" ");
+            temp = temp.next;
+        }
+    }
+    public static void main(String[] args){
+        // addFirst(2);
+        // addFirst(5);
+        // addLast(4);
+        // addLast(34);
+        // System.out.println("LinkedList: ");
+        // display(head);
+        Linked_list1 ll = new Linked_list1();
+        ll.addFirst(2);
+        ll.addFirst(6);
+        ll.addLast(4);
+        ll.display(head);
+    }
+}
